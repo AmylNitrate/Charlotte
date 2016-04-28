@@ -58,11 +58,11 @@ public class GameHandler : MonoBehaviour {
 		//Audio(change atmosphere)
 		hateMail.SetActive(true);
 		Newspaper.SetActive (true);
+		Debug.Log ("did the thing");
 	}
 	public void TriggerFour()
 	{
 		//Audio(porttrait smash)
-		portrait.SetActive(false);
 		fallenPortrait.SetActive(true);
 	}
 

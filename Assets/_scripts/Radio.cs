@@ -8,8 +8,11 @@ public class Radio : MonoBehaviour {
 
 	public bool canPlay, indicatorOn;
 
+	public GameObject indicator;
+
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
 	
 	}
 	
@@ -21,12 +24,16 @@ public class Radio : MonoBehaviour {
 			radiosource.PlayOneShot (radio);
 			canPlay = false;
 		}
-		if (indicatorOn) {
-			if (Input.GetButtonDown ("Space")) {
+		if (indicatorOn) 
+		{
+			if (Input.GetButtonDown ("Space")) 
+			{
 				if (radiosource.isPlaying) {
 					radiosource.Stop ();
+					GameObject.Find ("FrontDoor").GetComponent<Door> ().OpenDoor (120);
+
 				} else if (!radiosource.isPlaying) {
-					radiosource.PlayOneShot (radio);
+					GameObject.Find ("FrontDoor").GetComponent<Door> ().OpenDoor (120);
 				}
 			}
 		}
@@ -34,8 +41,15 @@ public class Radio : MonoBehaviour {
 
 	void OnTriggerEnter()
 	{
-		//turn indicator on
+		indicator.SetActive (true);
 		indicatorOn = true;
+
+	}
+
+	void OnTriggerExit()
+	{
+		indicator.SetActive (false);
+		indicatorOn = false;
 	}
 
 }

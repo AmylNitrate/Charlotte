@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class Trigger : MonoBehaviour {
 
-	public GameObject note, torch;
+	public GameObject note;
 
 
 	// Use this for initialization

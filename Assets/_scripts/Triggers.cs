@@ -10,13 +10,10 @@ public class Triggers : MonoBehaviour {
 	{
 		if (gameObject.name.Equals ("familyPortrait")) 
 		{
-			GameObject.Find ("Radio").GetComponent<Radio> ().canPlay = true;
 			torch.SetActive (true);
+			GameObject.Find ("Radio").GetComponent<Radio> ().canPlay = true;
 		}
-		if (gameObject.name.Equals ("bills")) {
-			GameObject.Find ("FrontDoor").GetComponent<Door> ().OpenDoor(120);
-		}
-		if (gameObject.name.Equals ("LawnToy")) {
+		if (gameObject.name.Equals ("SpellingToys")) {
 			//play dad dying audio
 		}
 		if (gameObject.name.Equals ("bloodstain")) {
