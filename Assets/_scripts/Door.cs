@@ -13,6 +13,8 @@ public class Door : MonoBehaviour {
 
 	public int doorCurveAmount;
 
+	public AudioClip creek;
+	public AudioSource source;
 
 	Text textRef1;
 	//public AudioClip m_doorsound;
@@ -71,7 +73,7 @@ public class Door : MonoBehaviour {
 
 	public void OpenDoor(int curveAmount)
 	{
-		//door creep audio
+		source.PlayOneShot (creek);
 		iTween.RotateTo (gameObject, iTween.Hash ("rotation", new Vector3 (0, curveAmount, 0), "time", _speed, "easetype", curve));
 		isOpen = true;
 	}
