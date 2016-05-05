@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Darkness : MonoBehaviour {
 
@@ -11,13 +12,15 @@ public class Darkness : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-		
+
     }
 
     // Update is called once per frame
     void Update()
     {
 		timer -= Time.deltaTime;
+
+		Debug.Log ("timer:" + timer);
 
 		if (!audioSource.isPlaying)
         {
@@ -30,7 +33,12 @@ public class Darkness : MonoBehaviour {
 		if (timer > 0)
         {
             audioSource.Stop();
+
         }
+		if (timer <= -24) 
+		{
+			SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex);
+		}
 
     }
 }
