@@ -37,7 +37,7 @@ public class Darkness : MonoBehaviour {
         }
 		if (timer <= -24) 
 		{
-			SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex);
+			SceneManager.LoadScene ("transition");
 		}
 
     }

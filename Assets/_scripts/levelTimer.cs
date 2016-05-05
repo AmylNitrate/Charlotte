@@ -17,7 +17,12 @@ public class levelTimer : MonoBehaviour {
 		counter -= Time.deltaTime;
 		if (counter <= 0)
 		{
-			SceneManager.LoadScene("SceneOne");
+			if (Data.control.Scene2 == false) {
+				SceneManager.LoadScene ("SceneOne");
+			}
+			if (Data.control.Scene2 == true) {
+				SceneManager.LoadScene ("SceneTwo");
+			}
 		}
 	}
 }
