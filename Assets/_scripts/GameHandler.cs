@@ -2,12 +2,13 @@
 using System.Collections;
 using System;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameHandler : MonoBehaviour {
 
 	public GameObject studyMail, portrait, hateMail, Newspaper, fallenPortrait;
-	public AudioSource faxsource;
-	public AudioClip fax;
+	public AudioSource faxsource, mainAsource;
+	public AudioClip fax, phone, drink, call;
 
 	Text textRef1;
 
@@ -39,7 +40,6 @@ public class GameHandler : MonoBehaviour {
 
 	public void TriggerOne()
 	{
-		//Audio(door open)
 		//studyMail.SetActive (true);
 		textRef1.text = "";
 		GameObject.Find ("StudyDoor").GetComponent<Door> ().OpenDoor(120);
@@ -48,9 +48,7 @@ public class GameHandler : MonoBehaviour {
 
 	public void TriggerTwo()
 	{
-		//Audio(door open)
 		GameObject.Find ("LaundryDoor").GetComponent<Door> ().OpenDoor (100);
-
 	}
 
 	public void TriggerThree()
@@ -65,5 +63,20 @@ public class GameHandler : MonoBehaviour {
 		//Audio(porttrait smash)
 		fallenPortrait.SetActive(true);
 	}
+
+	public void Call()
+	{
+		mainAsource.PlayOneShot (drink);
+		faxsource.PlayOneShot (phone);
+
+	}
+	public void Call000()
+	{
+		faxsource.Stop ();
+		mainAsource.PlayOneShot (call);
+		SceneManager.LoadScene("Start");
+	}
+
+		
 
 }

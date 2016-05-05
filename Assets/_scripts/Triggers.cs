@@ -3,7 +3,9 @@ using System.Collections;
 
 public class Triggers : MonoBehaviour {
 
-	public GameObject torch, note, upstairscol;
+	public GameObject torch, note, upstairscol, _bloodstain, cups, j3;
+	public AudioSource bloodstain;
+	public AudioClip car;
 
 	// Use this for initialization
 	void Start () 
@@ -14,7 +16,8 @@ public class Triggers : MonoBehaviour {
 			GameObject.Find ("Radio").GetComponent<Radio> ().canPlay = true;
 		}
 		if (gameObject.name.Equals ("SpellingToys")) {
-			//play dad dying audio
+			bloodstain.PlayOneShot (car);
+			_bloodstain.SetActive (true);
 		}
 		if (gameObject.name.Equals ("bloodstain")) {
 			GameObject.Find ("GameController").GetComponent<GameHandler> ().TriggerThree ();
@@ -29,6 +32,13 @@ public class Triggers : MonoBehaviour {
 			//Audio(upstairs noise)
 			Destroy(upstairscol);
 		}
+		if (gameObject.name.Equals ("JournalEntry2")) {
+			GameObject.Find ("GameController").GetComponent<GameHandler> ().FaxMachine (note);
+		}
+		if (gameObject.name.Equals ("Note4")) {
+			cups.SetActive (true);
+			j3.SetActive (true);
+		}
 	}
 
 	void Update()
@@ -39,4 +49,5 @@ public class Triggers : MonoBehaviour {
 			}
 		}
 	}
+		
 }

@@ -37,11 +37,21 @@ public class Indicator : MonoBehaviour {
 						thisObject.SetActive (true);
 						inspecting = true;
 					} 
-					else if (gameObject.tag.Equals ("Collectable")) 
+					if (gameObject.tag.Equals ("Collectable")) 
 					{
 						thisObject.SetActive (true);
 						Destroy (gameObject);
 					} 
+					if (gameObject.tag.Equals ("Cups")) 
+					{
+						fps.yes = false;
+						thisObject.SetActive (true);
+					}
+					if (gameObject.tag.Equals ("Phone")) {
+						fps.yes = false;
+						GameObject.Find ("GameController").GetComponent<GameHandler> ().Call000 ();
+						GameObject.FindGameObjectWithTag ("Player").GetComponent<Darkness> ().timer = 5000;
+					}
 
 					
 				} 
