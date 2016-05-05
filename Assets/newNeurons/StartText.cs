@@ -25,7 +25,7 @@ public class StartText : MonoBehaviour {
         counter -= Time.deltaTime;
         if (counter <= 0)
         {
-            SceneManager.LoadScene("psychOffice");
+            SceneManager.LoadScene("transition");
         }
 
 

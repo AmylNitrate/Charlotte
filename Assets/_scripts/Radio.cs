@@ -32,9 +32,7 @@ public class Radio : MonoBehaviour {
 					radiosource.Stop ();
 					GameObject.Find ("FrontDoor").GetComponent<Door> ().OpenDoor (120);
 
-				} else if (!radiosource.isPlaying) {
-					GameObject.Find ("FrontDoor").GetComponent<Door> ().OpenDoor (120);
-				}
+				} 
 			}
 		}
 	}
