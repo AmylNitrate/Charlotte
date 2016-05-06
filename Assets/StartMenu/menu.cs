@@ -41,7 +41,7 @@ public class menu : MonoBehaviour
 	public void StartLevel ()
 
 	{
-		SceneManager.LoadScene ("Prototype House");
+		SceneManager.LoadScene ("newIntro");
 		//Fading.Instance.StartFade(SceneName);
 	}
 

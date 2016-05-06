@@ -34,6 +34,7 @@ public class Inventory : MonoBehaviour
 		AddItem (0);
 		AddItem (1);
 		AddItem (1);
+		AddItem (1);
     }
 
     public void AddItem(int id)
@@ -87,5 +88,24 @@ public class Inventory : MonoBehaviour
 			}
 		}
 		return false;
+	}
+
+	public void UseItem(int id)
+	{
+		Item itemToAdd = database.FetchItemByID (id);
+
+		if (itemToAdd.Stackable && Check (itemToAdd)) 
+		{
+			for (int i = 0; i < items.Count; i++) 
+			{
+				if (items [i].ID == id) 
+				{
+					ItemData data = slots [i].transform.GetChild (0).GetComponent<ItemData> ();
+					data.Amount--;
+					data.transform.GetChild (0).GetComponent<Text> ().text = data.Amount.ToString ();
+					break;
+				}
+			}
+		} 
 	}
 }

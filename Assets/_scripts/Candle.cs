@@ -21,6 +21,7 @@ public class Candle : MonoBehaviour
 				if (Data.control.Matches > 0) 
 				{
 					Data.control.Matches--;
+					GameObject.Find ("Inventory").GetComponent<Inventory> ().UseItem (0);
 					flames.SetActive (true);
 					wic.SetActive (true);
 					GameObject.FindGameObjectWithTag("Player").GetComponent<Darkness>().timer = 10;

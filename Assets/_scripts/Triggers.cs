@@ -16,8 +16,8 @@ public class Triggers : MonoBehaviour {
 			GameObject.Find ("Radio").GetComponent<Radio> ().canPlay = true;
 		}
 		if (gameObject.name.Equals ("SpellingToys")) {
-			bloodstain.PlayOneShot (car);
 			_bloodstain.SetActive (true);
+			bloodstain.PlayOneShot (car);
 		}
 		if (gameObject.name.Equals ("bloodstain")) {
 			GameObject.Find ("GameController").GetComponent<GameHandler> ().TriggerThree ();

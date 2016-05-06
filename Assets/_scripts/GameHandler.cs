@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameHandler : MonoBehaviour {
 
-	public GameObject studyMail, portrait, hateMail, Newspaper, fallenPortrait;
+	public GameObject studyMail, portrait, hateMail, fallenPortrait;
 	public AudioSource faxsource, mainAsource;
 	public AudioClip fax, phone, drink, call;
 
@@ -55,7 +55,6 @@ public class GameHandler : MonoBehaviour {
 	{
 		//Audio(change atmosphere)
 		hateMail.SetActive(true);
-		Newspaper.SetActive (true);
 		Debug.Log ("did the thing");
 	}
 	public void TriggerFour()
@@ -74,7 +73,6 @@ public class GameHandler : MonoBehaviour {
 	{
 		faxsource.Stop ();
 		mainAsource.PlayOneShot (call);
-		SceneManager.LoadScene("Start");
 	}
 
 		

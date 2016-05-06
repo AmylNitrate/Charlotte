@@ -6,7 +6,7 @@ public class Indicator : MonoBehaviour {
 	public bool indicatorOn;
 	[SerializeField] public FirstPersonController fps;
 	public bool inspecting;
-	public GameObject thisObject, indicator, JournalPanel;
+	public GameObject thisObject, indicator, MainPanel;
 
 	// Use this for initialization
 	void Start () 
@@ -33,7 +33,8 @@ public class Indicator : MonoBehaviour {
 						fps.yes = false;
 						indicator.SetActive (false);
 						//gameObject.GetComponent<MeshRenderer> ().enabled = false;
-						JournalPanel.SetActive(true);
+						MainPanel.SetActive(true);
+						//JournalPanel.SetActive(true);
 						thisObject.SetActive (true);
 						inspecting = true;
 					} 
@@ -59,7 +60,8 @@ public class Indicator : MonoBehaviour {
 				{
 					fps.yes = true;
 					//gameObject.GetComponent<MeshRenderer> ().enabled = true;
-					JournalPanel.SetActive(false);
+					MainPanel.SetActive(false);
+					//JournalPanel.SetActive(false);
 					Destroy (gameObject);
 					inspecting = false;
 				}

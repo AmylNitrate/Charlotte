@@ -25,7 +25,7 @@ public class torch : MonoBehaviour {
 			lettherebelight = false;
 		}
 
-		if (Input.GetKey (KeyCode.B)) 
+		if (Input.GetKeyDown (KeyCode.B)) 
 		{
 			if (Data.control.Batteries > 0) 
 			{
@@ -33,6 +33,7 @@ public class torch : MonoBehaviour {
 				torchLight.SetActive (true);
 				time = 30;
 				Data.control.Batteries--;
+				GameObject.Find ("Inventory").GetComponent<Inventory> ().UseItem (1);
 			}
 		}
 
